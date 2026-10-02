@@ -26,8 +26,12 @@ jobs:
       - run: npm run build
       - run: npm i @capacitor/core @capacitor/cli @capacitor/android
       - run: npx cap init TrackMitra com.trackmitra.in --web-dir=dist || true
-      - run: npx cap add android || true
-      - run: npx cap copy android
+      - run: |
+          if [ ! -f "android/gradlew" ]; then
+            rm -rf android
+            npx cap add android
+          fi
+      - run: npx cap sync android
       - run: cd android && chmod +x gradlew && ./gradlew assembleDebug
 
       - uses: actions/upload-artifact@v4

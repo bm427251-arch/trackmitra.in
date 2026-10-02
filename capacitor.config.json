@@ -1,0 +1,9 @@
+{
+  "appId": "com.trackmitra.in",
+  "appName": "TrackMitra",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  }
+}

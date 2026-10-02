@@ -1,0 +1,22 @@
+{
+  "name": "TrackMitra Pro",
+  "short_name": "TrackMitra",
+  "description": "TrackMitra - DADA KA BHAROSA 24H Traveling Escort",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#000000",
+  "theme_color": "#FF6B00",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/vite.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

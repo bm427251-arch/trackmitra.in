@@ -21,10 +21,11 @@ jobs:
           java-version: '17'
 
       - run: npm install --legacy-peer-deps
+      - run: npm install @tailwindcss/oxide-linux-x64-gnu --no-save || true
       - run: npm run build
       - run: npm i @capacitor/core @capacitor/cli @capacitor/android
-      - run: npx cap init TrackMitra com.trackmitra.in --web-dir=dist
-      - run: npx cap add android
+      - run: npx cap init TrackMitra com.trackmitra.in --web-dir=dist || true
+      - run: npx cap add android || true
       - run: npx cap copy android
       - run: cd android && chmod +x gradlew && ./gradlew assembleDebug
 

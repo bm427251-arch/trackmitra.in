@@ -24,14 +24,9 @@ jobs:
       - run: npm install @tailwindcss/oxide-linux-x64-gnu --no-save || true
       - run: cp -f node_modules/@tailwindcss/oxide-linux-x64-gnu/tailwindcss-oxide.linux-x64-gnu.node node_modules/@tailwindcss/oxide/ 2>/dev/null || true
       - run: npm run build
-      - run: npm i @capacitor/core @capacitor/cli @capacitor/android
-      - run: npx cap init TrackMitra com.trackmitra.in --web-dir=dist || true
       - run: |
-          if [ ! -f "android/gradlew" ]; then
-            rm -rf android
-            npx cap add android
-          fi
-      - run: npx cap sync android
+          mkdir -p android/app/src/main/assets/public
+          cp -rf dist/* android/app/src/main/assets/public/
       - run: cd android && chmod +x gradlew && ./gradlew assembleDebug
 
       - uses: actions/upload-artifact@v4
